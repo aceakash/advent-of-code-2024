@@ -27,7 +27,7 @@ distancesOk report =
 
 getShorterLists :: [Int] -> [[Int]]
 getShorterLists report =
-  map (\i -> (fst (splitAt i report)) ++ (tail $ snd (splitAt i report))) [0 .. (length report) - 1]
+  map (\i -> take i report ++ tail (drop i report)) [0 .. length report - 1]
 
 isSafeByRemovingAny :: [Int] -> Bool
 isSafeByRemovingAny report =
